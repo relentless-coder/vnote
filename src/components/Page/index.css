@@ -1,0 +1,9 @@
+.page-container {
+	position: relative;
+}
+
+.writing-layer {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
