@@ -1,4 +1,6 @@
-import apiInstance from './base.js';
+import apiInstance from "./base.js";
 
-export const createPage = body => axios.post('/pages', body)
-export const getPages = body => axios.post('/pages')
+export const create = (body) => axios.post("/notebooks", body);
+export const getAll = () => axios.get("/notebooks");
+export const get = (id) => axios.get(`/notebooks/${id}`);
+export const update = (id, body) => axios.put(`/notebooks/${id}`, body);

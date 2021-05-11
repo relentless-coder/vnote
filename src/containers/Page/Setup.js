@@ -1,6 +1,9 @@
 import React, { useEffect, useRef } from 'react';
+import { Setup } from '../../components/Page/index';
 
-const PageLayer = function () {
+const SetupLayer = function () {
+  const canvasRef = useRef(null);
+  const contextRef = useRef(null);
   const setupPage = () => {
     const pixelRatio = window.devicePixelRatio || 1;
     const innerHeight = window.innerHeight * pixelRatio;
@@ -22,8 +25,6 @@ const PageLayer = function () {
     ctx.stroke();
   };
 
-  const canvasRef = useRef(null);
-  const contextRef = useRef(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -38,7 +39,7 @@ const PageLayer = function () {
     setupPage();
   }, []);
 
-  return <canvas ref={canvasRef} style={{'zIndex': '0'}}/>;
+  return <Setup canvasRef={canvasRef} />;
 };
 
-export {PageLayer}
+export { SetupLayer };

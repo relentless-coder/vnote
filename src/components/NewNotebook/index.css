@@ -1,0 +1,11 @@
+.new-notebook {
+  width: 150px;
+  height: 200px;
+  background: #c7c7c7;
+  border-radius: round;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
