@@ -12,7 +12,7 @@ Features that I am aiming for.
 
 * Full notebook encryption
 * Export selected, or all pages of a notebook as a pdf file.
-* Cross platform compatibility, using electron.js and react-native.
+* Desktop version using electron.js
 
 ---
 
