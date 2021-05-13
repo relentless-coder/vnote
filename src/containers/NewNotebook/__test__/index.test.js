@@ -2,7 +2,11 @@ import React from "react";
 import { render, screen, fireEvent, act } from "@testing-library/react";
 import NewNotebookContainer from "../";
 import { notebooksApi } from "../../../api/index";
+jest.mock("../../../api/index");
 
+afterEach(() => {
+  jest.clearAllMocks();
+});
 describe("NewNotebook Container", () => {
   const root = document.createElement("div");
   root.setAttribute("id", "root");
@@ -45,22 +49,18 @@ describe("NewNotebook Container", () => {
     act(() => {
       fireEvent.click(screen.getByTestId("new_notebook"));
     });
-    const spy = jest
-      .spyOn(notebooksApi, "create")
-      .mockImplementation((x) => Promise.resolve(x));
+    notebooksApi.create.mockResolvedValue(true);
     act(() => {
       fireEvent.click(screen.getByRole("button", { name: /Create Notebook/ }));
     });
-    expect(spy).not.toHaveBeenCalled();
+    expect(notebooksApi.create).not.toHaveBeenCalled();
   });
   it("should invoke api if title exists", async () => {
     renderNotebook();
     act(() => {
       fireEvent.click(screen.getByTestId("new_notebook"));
     });
-    const spy = jest
-      .spyOn(notebooksApi, "create")
-      .mockImplementation((x) => Promise.resolve(x));
+    notebooksApi.create.mockResolvedValue(true);
     act(() => {
       fireEvent.change(screen.getByPlaceholderText("Enter title"), {
         target: { value: "some title" },
@@ -70,7 +70,7 @@ describe("NewNotebook Container", () => {
       fireEvent.click(screen.getByRole("button", { name: /Create Notebook/ }));
       return Promise.resolve();
     });
-    expect(spy).toHaveBeenCalledTimes(1);
+    expect(notebooksApi.create).toHaveBeenCalledTimes(1);
     expect(screen.getByTestId("new_notebook")).toBeInTheDocument();
   });
 });

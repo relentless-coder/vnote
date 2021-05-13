@@ -12,7 +12,7 @@ describe("<AllNotebooks />", () => {
     ];
     render(
       <Router>
-        <AllNotebooks notebooks={notebooks} />
+        <AllNotebooks data={notebooks} />
       </Router>
     );
     expect(screen.getByText("Some Title 1")).toBeInTheDocument();

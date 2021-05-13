@@ -1,6 +1,6 @@
-import apiInstance from "./base.js";
+import instance from "./base.js";
 
-export const create = (body) => axios.post("/notebooks", body);
-export const getAll = () => axios.get("/notebooks");
-export const get = (id) => axios.get(`/notebooks/${id}`);
-export const update = (id, body) => axios.put(`/notebooks/${id}`, body);
+export const create = (body) => instance.post("/notebooks", body);
+export const getAll = () => instance.get("/notebooks");
+export const get = (id) => instance.get(`/notebooks/${id}`);
+export const update = (id, body) => instance.put(`/notebooks/${id}`, body);
