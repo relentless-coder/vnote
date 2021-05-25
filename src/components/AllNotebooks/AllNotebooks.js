@@ -2,7 +2,7 @@ import React from "react";
 import Notebook from "../Notebook";
 import "./index.css";
 
-const AllNotebooks = ({ data }) => {
+export const AllNotebooks = ({ data }) => {
   return (
     <div className="all_notebooks">
       {data.map((el) => (
@@ -11,5 +11,3 @@ const AllNotebooks = ({ data }) => {
     </div>
   );
 };
-
-export { AllNotebooks };

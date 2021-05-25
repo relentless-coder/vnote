@@ -9,7 +9,6 @@ const SetupLayer = function () {
     const innerHeight = window.innerHeight * pixelRatio;
     const innerWidth = window.innerWidth * pixelRatio;
     const ctx = contextRef.current;
-    console.log(ctx, innerWidth);
     ctx.beginPath();
     ctx.moveTo(0, 5);
     ctx.lineTo(50, 10);

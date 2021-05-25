@@ -2,11 +2,11 @@ import React from 'react';
 import {SetupLayer} from './Setup';
 import {WritingLayer} from './Writing'
 
-const PageContainer = function(){
+const PageContainer = function(props){
 	// Contain page state
 	return <React.Fragment>
 		<SetupLayer />
-		<WritingLayer />
+		<WritingLayer savedSteps={props.steps || []}/>
 	</React.Fragment>
 }
 
